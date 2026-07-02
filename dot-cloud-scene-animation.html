@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- Mirrored from ibrahimbaheeg.weebly.com/dot-cloud-scene-animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jul 2026 17:52:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<title>IBRAHIM BAHEEG DOT CLOUD SCENE - IBRAHIM BAHEEG</title><meta property="og:site_name" content="IBRAHIM BAHEEG" />
+<meta property="og:title" content="IBRAHIM BAHEEG DOT CLOUD SCENE" />
+<meta property="og:description" content="IBRAHIM BAHEEG" />
+<meta property="og:image" content="uploads/1/3/3/3/133351565/icon-transparent-w.png" />
+<meta property="og:url" content="dot-cloud-scene-animation.html" />
+
+
+<meta name="keywords" content="IBRAHIM BAHEEG, ANIMATION, ARCHVIS, VIDEOS, PRODUCTION, FAST, THRILL, REELS, DOT CLOUD SCENE" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="uploads/1/3/3/3/133351565/icon-square-w_orig.png">
+
+		<!-- Google site verification -->
+<meta name="google-site-verification" content="U8IWVniUAly91z-hJstWxEsAyaGgaVhyq9P9Ur0odIo" />
+
+<!-- Pinterest site verification -->
+<meta name="p:domain_verify" content="dbb8a27e9781710a5a59d7e372d4cea2" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="uploads/1/3/3/3/133351565/icon-square-w_orig.png">
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "t88ggsv1ah");
+</script>
+
+<!-- Crisp (hidden chat, tracking only) -->
+<script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "6ae4a9f8-f1b9-4386-9769-9359b9b32793";
+    (function(){
+        d=document;
+        s=d.createElement("script");
+        s.src="../client.crisp.chat/l.js";
+        s.async=1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
+
+<script type="text/javascript">
+    $crisp.push(["do", "chat:hide"]);
+</script>
+
+
+<script>
+jQuery(function($) {
+
+  var birdseyeController = {
+    init: function() {
+      var base = this;
+      $('body').checkHeaderPositioning(window, 'affix');
+      base._addClasses();
+      base._attachEvents();
+    },
+
+    _addClasses: function() {
+      $('body').addClass('fade-in');
+
+      $('.wsite-menu-default').find('li.wsite-menu-item-wrap').each(function(){
+        var $me = $(this);
+        if($me.children('.wsite-menu-wrap').length > 0) {
+          $me.addClass('has-submenu');
+          $('<span class="icon-caret"></span>').insertAfter($me.children('a.wsite-menu-item'));
+        }
+      });
+
+      $('.wsite-menu').find('li.wsite-menu-subitem-wrap').each(function(){
+        var $me = $(this);
+        if($me.children('.wsite-menu-wrap').length > 0) {
+          $me.addClass('has-submenu');
+          $('<span class="icon-caret"></span>').insertAfter($me.children('a.wsite-menu-subitem'));
+        }
+      });
+
+      $('li.wsite-menu-subitem-wrap.wsite-nav-current').parents('.wsite-menu-wrap').addClass('open');
+
+      $('.wsite-form-sublabel').each(function(){
+        var sublabel = $(this).text();
+        $(this).prev('.wsite-form-input').attr('placeholder', sublabel);
+      });
+    },
+
+    _checkCartItems: function() {
+      if($('#wsite-mini-cart').find('li.wsite-product-item').length > 0) {
+        $('body').addClass('cart-full');
+      } else {
+        $('body').removeClass('cart-full');
+      }
+    },
+
+    _moveLogin: function() {
+      var loginDetach = $('#member-login').detach();
+      $('.mobile-nav .wsite-menu-default > li:last-child').after(loginDetach);
+    },
+
+    _moveFlyout: function() {
+      var move = $("#wsite-menus").detach();
+      $(".birdseye-header").append(move);
+    },
+
+    _attachEvents: function() {
+      var base = this;
+
+      // Hamburger toggle - event delegation, timing-proof
+      $(document).on('click', '.hamburger', function(e) {
+        e.preventDefault();
+        $('body').toggleClass('nav-open');
+      });
+
+      // Fixed header on scroll
+      $.fn.checkHeaderPositioning = function(scrollEl, scrollClass) {
+        var $me = $(this);
+        if (!$me.length) return;
+        if($(scrollEl).scrollTop() > 50) {
+          $me.addClass(scrollClass);
+        } else if($(scrollEl).scrollTop() === 0) {
+          $me.removeClass(scrollClass);
+        }
+      };
+
+      $(window).on('scroll', function() {
+        $('body').checkHeaderPositioning(window, 'affix');
+      });
+
+      // Subnav toggle
+      $(document).on('click', 'li.has-submenu span.icon-caret', function() {
+        var $wrap = $(this).siblings('.wsite-menu-wrap');
+        $wrap.toggleClass('open');
+      });
+
+      // Move cart + login on mobile
+      if ($(window).width() <= 992) {
+        setTimeout(function(){
+          var loginDetach = $('#member-login').detach();
+          $('.mobile-nav .wsite-menu-default > li:last-child').after(loginDetach);
+        }, 1200);
+      }
+
+      // Move flyout menus into header
+      setTimeout(function(){
+        var move = $("#wsite-menus").detach();
+        $(".birdseye-header").append(move);
+      }, 400);
+
+      // Store category dropdown
+      $('.wsite-com-sidebar').on('click', function(){
+        $(this).toggleClass('sidebar-expanded');
+      });
+
+      $('#wsite-search-sidebar').on('click', function(){
+        $(this).toggleClass('sidebar-expanded');
+      });
+    }
+  };
+
+  $.fn.checkHeaderPositioning = function(scrollEl, scrollClass) {
+    var $me = $(this);
+    if (!$me.length) return;
+    if($(scrollEl).scrollTop() > 50) {
+      $me.addClass(scrollClass);
+    } else if($(scrollEl).scrollTop() === 0) {
+      $me.removeClass(scrollClass);
+    }
+  };
+
+  $(document).ready(function(){
+    birdseyeController.init();
+  });
+
+});
+</script>
+
+		<link id="wsite-base-style" rel="stylesheet" type="text/css" href="../cdn11.editmysite.com/css/sitesd746.css?buildtime=1782335418" />
+<link rel="stylesheet" type="text/css" href="../cdn11.editmysite.com/css/old/fancyboxd746.css?buildtime=1782335418" />
+<link rel="stylesheet" type="text/css" href="../cdn11.editmysite.com/css/social-iconsd746.css?buildtime=1782335418" media="screen,projection" />
+<link rel="stylesheet" type="text/css" href="files/main_stylec868.css?1782650309" title="wsite-theme-css" />
+<link href='../cdn2.editmysite.com/fonts/Montserrat/fontc81e.css?2' rel='stylesheet' type='text/css' />
+
+<link href='../cdn2.editmysite.com/fonts/Libre_Franklin/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Quicksand/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Libre_Franklin/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Quicksand/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Libre_Franklin/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Quicksand/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Quicksand/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Libre_Franklin/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Libre_Franklin/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Quicksand/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<link href='../cdn2.editmysite.com/fonts/Playfair_Display/fontc81e.css?2' rel='stylesheet' type='text/css' />
+<style type='text/css'>
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-family:"Libre Franklin" !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-family:"Quicksand" !important;}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-family:"Libre Franklin" !important;font-weight:200 !important;letter-spacing: 5px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{font-family:"Quicksand" !important;font-weight:700 !important;color:#a1a1a1 !important;text-transform:  uppercase !important;}
+#wsite-title {font-family:"Libre Franklin" !important;font-weight:700 !important;}
+.wsite-not-footer h2.wsite-content-title a, .wsite-not-footer .paragraph a, .wsite-not-footer blockquote a, #blogTable .blog-sidebar a, #blogTable .blog-comments a, #blogTable .blog-comments-bottom a, #wsite-com-store a, #wsite-com-product-gen a {color:#d5d5d5 !important;}
+.wsite-menu-default a {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-menu a {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {font-family:"Libre Franklin" !important;font-style:normal !important;}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {font-family:"Libre Franklin" !important;font-weight:200 !important;font-style:normal !important;text-transform:  none !important;letter-spacing: 0px !important;}
+.wsite-button-inner {font-family:"Quicksand" !important;font-weight:700 !important;}
+.wsite-not-footer blockquote {font-family:"Playfair Display" !important;font-weight:400 !important;}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+.wsite-not-footer h2.wsite-content-title a:hover, .wsite-not-footer .paragraph a:hover, .wsite-not-footer blockquote a:hover, #blogTable .blog-sidebar a:hover, #blogTable .blog-comments a:hover, #blogTable .blog-comments-bottom a:hover, #wsite-com-store a:hover, #wsite-com-product-gen a:hover {color:#838383 !important;}
+.wsite-button-small .wsite-button-inner {font-size:16px !important;}
+.wsite-button-large .wsite-button-inner {font-size:16px !important;}
+@media screen and (min-width: 767px) {.wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {font-size:13px !important;line-height:13px !important;}
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {}
+.wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label{font-size:12px !important;}
+.wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {font-size:40px !important;}
+#wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {}
+.wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title{font-size:12px !important;}
+#wsite-title {}
+.wsite-menu-default a {}
+.wsite-menu a {}
+.wsite-image div, .wsite-caption {}
+.galleryCaptionInnerText {}
+.fancybox-title {}
+.wslide-caption-text {}
+.wsite-phone {}
+.wsite-headline,.wsite-header-section .wsite-content-title {}
+.wsite-headline-paragraph,.wsite-header-section .paragraph {line-height:15px !important;}
+.wsite-button-inner {}
+.wsite-not-footer blockquote {font-size:38px !important;line-height:59px !important;}
+.wsite-footer blockquote {}
+.blog-header h2 a {}
+#wsite-content h2.wsite-product-title {}
+.wsite-product .wsite-product-price a {}
+}</style>
+
+		<script src='files/templateArtifactsc868.js?1782650309'></script>
+<script>
+var STATIC_BASE = 'http://cdn1.editmysite.com/';
+var ASSETS_BASE = 'http://cdn11.editmysite.com/';
+var STYLE_PREFIX = 'wsite';
+</script>
+<script src='../cdn11.editmysite.com/js/jquery-1.8.3.min.js'></script>
+
+<script type="text/javascript" src="../cdn2.editmysite.com/js/lang/en/stlf06b.js?buildTime=1782335418&amp;"></script>
+<script src="../cdn11.editmysite.com/js/site/maind746.js?buildtime=1782335418"></script><script type="text/javascript">
+		function initCustomerAccountsModels() {
+					(function(){_W.setup_rpc({"url":"\/ajax\/api\/JsonRPC\/CustomerAccounts\/","actions":{"CustomerAccounts":[{"name":"login","len":2,"multiple":false,"standalone":false},{"name":"logout","len":0,"multiple":false,"standalone":false},{"name":"getSessionDetails","len":0,"multiple":false,"standalone":false},{"name":"getAccountDetails","len":0,"multiple":false,"standalone":false},{"name":"getOrders","len":0,"multiple":false,"standalone":false},{"name":"register","len":4,"multiple":false,"standalone":false},{"name":"emailExists","len":1,"multiple":false,"standalone":false},{"name":"passwordReset","len":1,"multiple":false,"standalone":false},{"name":"passwordUpdate","len":3,"multiple":false,"standalone":false},{"name":"validateSession","len":1,"multiple":false,"standalone":false}]},"namespace":"_W.CustomerAccounts.RPC"});
+_W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":"_W.CustomerAccounts.BackboneModelData","collection_namespace":"_W.CustomerAccounts.BackboneCollectionData","bootstrap_namespace":"_W.CustomerAccounts.BackboneBootstrap","models":{"CustomerAccounts":{"_class":"CustomerAccounts.Model.CustomerAccounts","defaults":null,"validation":null,"types":null,"idAttribute":null,"keydefs":null}},"collections":{"CustomerAccounts":{"_class":"CustomerAccounts.Collection.CustomerAccounts"}},"bootstrap":[]});
+})();
+		}
+		if(document.createEvent && document.addEventListener) {
+			var initEvt = document.createEvent('Event');
+			initEvt.initEvent('customerAccountsModelsInitialized', true, false);
+			document.dispatchEvent(initEvt);
+		} else if(document.documentElement.initCustomerAccountsModels === 0){
+			document.documentElement.initCustomerAccountsModels++
+		}
+		</script>
+		<script type="text/javascript"> _W = _W || {}; _W.securePrefix='ibrahimbaheeg.weebly.com'; </script><script>_W = _W || {};
+			_W.customerLocale = "en_US";
+			_W.storeName = null;
+			_W.isCheckoutReskin = false;
+			_W.storeCountry = "EG";
+			_W.storeCurrency = "USD";
+			_W.storeEuPrivacyPolicyUrl = "";
+			com_currentSite = "308312222549638392";
+			com_userID = "133351565";</script><script type="text/javascript">_W.configDomain = "www.weebly.com";</script><script>_W.relinquish && _W.relinquish()</script>
+<script type="text/javascript" src="../cdn2.editmysite.com/js/lang/en/stl1bf8.js?buildTime=1782856325&amp;"></script><script> _W.themePlugins = [];</script><script type="text/javascript"> _W.recaptchaUrl = "../www.google.com/recaptcha/api.js"; </script><script type="text/javascript"><!--
+	
+	
+	function initFlyouts(){
+		initPublishedFlyoutMenus(
+			[{"id":"868549310935968192","title":"DESIGN","url":"design.html","target":"","nav_menu":false,"nonclickable":false},{"id":"423808156944327919","title":"ANIMATION","url":"animation.html","target":"","nav_menu":false,"nonclickable":false},{"id":"815741047993364014","title":"INTERACTIVE","url":"interactive.html","target":"","nav_menu":false,"nonclickable":false},{"id":"563661431940787147","title":"MENTORSHIP","url":"mentorship.html","target":"","nav_menu":false,"nonclickable":false}],
+			"135975330228695235",
+			'',
+			'active',
+			false,
+			{"navigation\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n","navigation\/flyout\/list":"<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n","navigation\/flyout\/item":"<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"},
+			{}
+		)
+	}
+//-->
+</script>
+		
+		<script type="text/javascript">(function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="../static.zotabox.com/6/9/6972ea4fe8e76a20caa3b853ee786fd5/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));</script>
+	</head>
+	<body class="header-page  wsite-page-dot-cloud-scene-animation  full-width-body-off header-overlay-on alt-nav-off  wsite-theme-dark"><div class="wrapper">
+    <div class="birdseye-header">
+      <div class="nav-wrap">
+        <div class="container">
+          <div class="logo"><span class="wsite-logo">
+
+	<a href="index-2.html">
+		<img src="uploads/1/3/3/3/133351565/icon-transparent-w.png" alt="IBRAHIM BAHEEG" />
+	</a>
+
+</span></div>
+          <div class="nav desktop-nav"><ul class="wsite-menu-default">
+		<li id="pg868549310935968192" class="wsite-menu-item-wrap">
+			<a
+						href="design.html"
+				class="wsite-menu-item"
+				>
+				DESIGN
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-996403949317366053"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="architectural.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			ARCHITECTURAL
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-107385790998827961"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="interior.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			INTERIOR
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-184803882908865908"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="concepts.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			CONCEPTS
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg423808156944327919" class="wsite-menu-item-wrap">
+			<a
+						href="animation.html"
+				class="wsite-menu-item"
+				>
+				ANIMATION
+			</a>
+			
+		</li>
+		<li id="pg815741047993364014" class="wsite-menu-item-wrap">
+			<a
+						href="interactive.html"
+				class="wsite-menu-item"
+				>
+				INTERACTIVE
+			</a>
+			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-898385158976184614"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="game-development.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			GAME DEVELOPMENT
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-239194588729364776"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="interactive-walkthroughs.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			INTERACTIVE WALKTHROUGHS
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+		</li>
+		<li id="pg563661431940787147" class="wsite-menu-item-wrap">
+			<a
+						href="mentorship.html"
+				class="wsite-menu-item"
+				>
+				MENTORSHIP
+			</a>
+			
+		</li>
+</ul>
+</div>
+        </div>
+        <!-- Hamburger is OUTSIDE the display:table container so it's never collapsed -->
+        <label class="hamburger" aria-label="Menu"><span></span></label>
+      </div>
+    </div>
+    <div class="banner-wrap">
+      <div class="wsite-elements wsite-not-footer wsite-header-elements">
+	<div class="wsite-section-wrap">
+	<div  class="wsite-section wsite-header-section wsite-section-bg-color" style="vertical-align: middle;background-color: #000000;background-image: none;is_customized: 1;" >
+		<div class="wsite-section-content">
+			
+          <div class="container">
+            <div class="banner">
+				<div class="wsite-section-elements">
+					<div class="paragraph"><strong><font color="#d5d5d5" size="6">DOT CLOUD SCENE</font></strong></div>
+
+<div><div id="340508882177779919" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: black;">
+    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+            src="https://www.youtube.com/embed/EayOBMsYWLc?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=EayOBMsYWLc&amp;rel=0" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+
+
+
+</div>
+				</div>
+			</div>
+          </div>
+      
+		</div>
+		<div class=""></div>
+	</div>
+</div>
+
+</div>
+
+    </div>
+    <div class="main-wrap">
+      <div id="wsite-content" class="wsite-elements wsite-not-footer">
+	<div class="wsite-section-wrap">
+	<div class="wsite-section wsite-body-section wsite-background-89" style="height: auto;" >
+		<div class="wsite-section-content">
+          <div class="container">
+			<div class="wsite-section-elements">
+				
+			</div>
+		</div>
+      </div>
+
+	</div>
+</div>
+
+</div>
+
+    </div>
+    <div class="footer-wrap">
+        <div class="footer">
+
+<style type="text/css">
+	@font-face {
+		font-family: SQMarket-Medium;
+		font-style: normal;
+		font-weight: 500;
+		src:
+			url("http://cdn11.editmysite.com/fonts/SQ_Market/sqmarket-medium.woff2") format("woff2"),
+			url("http://cdn11.editmysite.com/fonts/SQ_Market/sqmarket-medium.woff") format("woff");
+	}
+</style>
+
+<div id="weebly-footer-signup-container-v3">
+	<a
+		href="https://www.weebly.com/signup?utm_source=internal&amp;utm_medium=footer"
+		target="_blank"
+		class="signup-container-header"
+		id="signup-link-href"
+	>
+		<div class="powered-by">
+			<div class="footer-published-ab-powered-by">
+				Powered by <span class="link weebly-icon"></span>
+				<img class="footer-ab-published-toast-image" src="../cdn11.editmysite.com/images/site/footer/footer-toast-published-image-1.png">
+				<span class="footer-ab-published-toast-text">Create your own unique website with customizable templates.</span>
+				<span class="footer-ab-published-toast-button-wrapper">
+					<button class="footer-published-ab-button">Get Started</button>
+				</span>
+			</div>
+		</div>
+	</a>
+</div>
+
+<script type="text/javascript" src="../cdn11.editmysite.com/js/site/footerSignupc841.js?buildTime=1782856325"></script>
+<script type="text/javascript">
+	if (document.readystate === 'complete') {
+		Weebly.footer.setupContainer('cdn11.editmysite.com', '1782856325');
+	} else {
+		document.addEventListener('DOMContentLoaded', function() {
+			Weebly.footer.setupContainer('cdn11.editmysite.com', '1782856325');
+		});
+	}
+</script>
+</div>
+    </div><!-- end footer-wrap -->
+  </div><!-- /.wrapper -->
+  <div id="navMobile" class="nav mobile-nav">
+    <label class="hamburger" aria-label="Menu"><span></span></label>
+    <ul class="wsite-menu-default">
+    		<li id="pg868549310935968192" class="wsite-menu-item-wrap">
+    			<a
+    						href="design.html"
+    				class="wsite-menu-item"
+    				>
+    				DESIGN
+    			</a>
+    			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-996403949317366053"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="architectural.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			ARCHITECTURAL
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-107385790998827961"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="interior.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			INTERIOR
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-184803882908865908"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="concepts.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			CONCEPTS
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+    		</li>
+    		<li id="pg423808156944327919" class="wsite-menu-item-wrap">
+    			<a
+    						href="animation.html"
+    				class="wsite-menu-item"
+    				>
+    				ANIMATION
+    			</a>
+    			
+    		</li>
+    		<li id="pg815741047993364014" class="wsite-menu-item-wrap">
+    			<a
+    						href="interactive.html"
+    				class="wsite-menu-item"
+    				>
+    				INTERACTIVE
+    			</a>
+    			<div class="wsite-menu-wrap" style="display:none">
+	<ul class="wsite-menu">
+		<li id="wsite-nav-898385158976184614"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="game-development.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			GAME DEVELOPMENT
+		</span>
+	</a>
+	
+</li>
+<li id="wsite-nav-239194588729364776"
+	class="wsite-menu-subitem-wrap "
+	>
+	<a
+				href="interactive-walkthroughs.html"
+		class="wsite-menu-subitem"
+		>
+		<span class="wsite-menu-title">
+			INTERACTIVE WALKTHROUGHS
+		</span>
+	</a>
+	
+</li>
+
+	</ul>
+</div>
+
+    		</li>
+    		<li id="pg563661431940787147" class="wsite-menu-item-wrap">
+    			<a
+    						href="mentorship.html"
+    				class="wsite-menu-item"
+    				>
+    				MENTORSHIP
+    			</a>
+    			
+    		</li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="files/theme/plugins4a69.js?1777059609"></script>
+  <script type="text/javascript" src="files/theme/custom4a69.html?1777059609"></script>
+    <div id="customer-accounts-app"></div>
+    <script src="../cdn2.editmysite.com/js/site/main-customer-accounts-site5e47.js?buildtime=1782856325"></script>
+
+		<!-- Google tag (gtag.js) --> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H45J87P8F1"></script> 
+<script> 
+  window.dataLayer = window.dataLayer || []; 
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date()); 
+
+  gtag('config', 'G-H45J87P8F1'); 
+</script>
+
+<!-- Force custom favicon to override Weebly's -->
+<script>
+  window.addEventListener("load", function () {
+    // Remove any default Weebly favicon
+    document.querySelectorAll("link[rel='shortcut icon'], link[rel='icon']").forEach(el => el.remove());
+
+    // Add your custom favicon
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = 'uploads/1/3/3/3/133351565/icon-square-w_orig.png';
+    document.head.appendChild(link);
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+jQuery(function($) {
+
+  var birdseyeController = {
+    init: function() {
+      var base = this;
+      $('body').checkHeaderPositioning(window, 'affix');
+      base._addClasses();
+      base._attachEvents();
+    },
+
+    _addClasses: function() {
+      $('body').addClass('fade-in');
+
+      $('.wsite-menu-default').find('li.wsite-menu-item-wrap').each(function(){
+        var $me = $(this);
+        if($me.children('.wsite-menu-wrap').length > 0) {
+          $me.addClass('has-submenu');
+          $('<span class="icon-caret"></span>').insertAfter($me.children('a.wsite-menu-item'));
+        }
+      });
+
+      $('.wsite-menu').find('li.wsite-menu-subitem-wrap').each(function(){
+        var $me = $(this);
+        if($me.children('.wsite-menu-wrap').length > 0) {
+          $me.addClass('has-submenu');
+          $('<span class="icon-caret"></span>').insertAfter($me.children('a.wsite-menu-subitem'));
+        }
+      });
+
+      $('li.wsite-menu-subitem-wrap.wsite-nav-current').parents('.wsite-menu-wrap').addClass('open');
+
+      $('.wsite-form-sublabel').each(function(){
+        var sublabel = $(this).text();
+        $(this).prev('.wsite-form-input').attr('placeholder', sublabel);
+      });
+    },
+
+    _checkCartItems: function() {
+      if($('#wsite-mini-cart').find('li.wsite-product-item').length > 0) {
+        $('body').addClass('cart-full');
+      } else {
+        $('body').removeClass('cart-full');
+      }
+    },
+
+    _moveLogin: function() {
+      var loginDetach = $('#member-login').detach();
+      $('.mobile-nav .wsite-menu-default > li:last-child').after(loginDetach);
+    },
+
+    _moveFlyout: function() {
+      var move = $("#wsite-menus").detach();
+      $(".birdseye-header").append(move);
+    },
+
+    _attachEvents: function() {
+      var base = this;
+
+      // Hamburger toggle - event delegation, timing-proof
+      $(document).on('click', '.hamburger', function(e) {
+        e.preventDefault();
+        $('body').toggleClass('nav-open');
+      });
+
+      // Fixed header on scroll
+      $.fn.checkHeaderPositioning = function(scrollEl, scrollClass) {
+        var $me = $(this);
+        if (!$me.length) return;
+        if($(scrollEl).scrollTop() > 50) {
+          $me.addClass(scrollClass);
+        } else if($(scrollEl).scrollTop() === 0) {
+          $me.removeClass(scrollClass);
+        }
+      };
+
+      $(window).on('scroll', function() {
+        $('body').checkHeaderPositioning(window, 'affix');
+      });
+
+      // Subnav toggle
+      $(document).on('click', 'li.has-submenu span.icon-caret', function() {
+        var $wrap = $(this).siblings('.wsite-menu-wrap');
+        $wrap.toggleClass('open');
+      });
+
+      // Move cart + login on mobile
+      if ($(window).width() <= 992) {
+        setTimeout(function(){
+          var loginDetach = $('#member-login').detach();
+          $('.mobile-nav .wsite-menu-default > li:last-child').after(loginDetach);
+        }, 1200);
+      }
+
+      // Move flyout menus into header
+      setTimeout(function(){
+        var move = $("#wsite-menus").detach();
+        $(".birdseye-header").append(move);
+      }, 400);
+
+      // Store category dropdown
+      $('.wsite-com-sidebar').on('click', function(){
+        $(this).toggleClass('sidebar-expanded');
+      });
+
+      $('#wsite-search-sidebar').on('click', function(){
+        $(this).toggleClass('sidebar-expanded');
+      });
+    }
+  };
+
+  $.fn.checkHeaderPositioning = function(scrollEl, scrollClass) {
+    var $me = $(this);
+    if (!$me.length) return;
+    if($(scrollEl).scrollTop() > 50) {
+      $me.addClass(scrollClass);
+    } else if($(scrollEl).scrollTop() === 0) {
+      $me.removeClass(scrollClass);
+    }
+  };
+
+  $(document).ready(function(){
+    birdseyeController.init();
+  });
+
+});
+</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-7870337-1']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_setAllowLinker', true]);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		// NOTE: keep the [1] if you replace this code. Otherwise cookie banner scripts won't be first on the page
+		var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wGA = '_gaq';
+</script>
+
+<script type="text/javascript" async=1>
+	// NOTE: keep the getElementsByTagName(o)**[1]** if you replace this code. Otherwise cookie banner scripts won't be first on the page
+	;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];
+			p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)
+			};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[1];n.async=1;
+			n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,'script','../cdn3.editmysite.com/app/website/static/js/wsnbn/snowday262.js','snowday'));
+
+	var r = [99, 104, 101, 99, 107, 111, 117, 116, 46, 40, 119, 101, 101, 98, 108, 121, 124, 101, 100, 105, 116, 109, 121, 115, 105, 116, 101, 41, 46, 99, 111, 109];
+	var snPlObR = function(arr) {
+		var s = '';
+		for (var i = 0 ; i < arr.length ; i++){
+			s = s + String.fromCharCode(arr[i]);
+		}
+		return s;
+	};
+	var s = snPlObR(r);
+
+	var regEx = new RegExp(s);
+
+	_W.Analytics = _W.Analytics || {'trackers': {}};
+	_W.Analytics.trackers.wSP = 'snowday';
+	_W.Analytics.user_id = '133351565';
+	_W.Analytics.site_id = '308312222549638392';
+
+
+	(function(app_id, ec_hostname, discover_root_domain) {
+		var track = window[_W.Analytics.trackers.wSP];
+		if (!track) return;
+		track('newTracker', app_id, ec_hostname, {
+			appId: app_id,
+			post: true,
+			platform: 'web',
+			discoverRootDomain: discover_root_domain,
+			cookieName: '_snow_',
+			contexts: {
+				webPage: true,
+				performanceTiming: true,
+				gaCookies: true
+			},
+			crossDomainLinker: function (linkElement) {
+				return regEx.test(linkElement.href);
+			},
+			respectDoNotTrack: true
+		});
+		track('trackPageView', _W.Analytics.user_id+':'+_W.Analytics.site_id, _W.Analytics.spContexts);
+		track('crossDomainLinker', function (linkElement) {
+			return regEx.test(linkElement.href);
+		});
+	})(
+		'_wn',
+		'ec.editmysite.com',
+		false
+	);
+</script>
+
+
+
+
+
+<script>
+	(function(jQuery) {
+		try {
+			if (jQuery) {
+				jQuery('div.blog-social div.fb-like').attr('class', 'blog-social-item blog-fb-like');
+				var $commentFrame = jQuery('#commentArea iframe');
+				if ($commentFrame.length > 0) {
+					var frameHeight = jQuery($commentFrame[0].contentWindow.document).height() + 50;
+					$commentFrame.css('min-height', frameHeight + 'px');
+				}
+				if (jQuery('.product-button').length > 0){
+					jQuery(document).ready(function(){
+						jQuery('.product-button').parent().each(function(index, product){
+							if(jQuery(product).attr('target') == 'paypal'){
+								if (!jQuery(product).find('> [name="bn"]').length){
+									jQuery('<input>').attr({
+										type: 'hidden',
+										name: 'bn',
+										value: 'DragAndDropBuil_SP_EC'
+									}).appendTo(product);
+								}
+							}
+						});
+					});
+				}
+			}
+			else {
+				// Prototype
+				$$('div.blog-social div.fb-like').each(function(div) {
+					div.className = 'blog-social-item blog-fb-like';
+				});
+				$$('#commentArea iframe').each(function(iframe) {
+					iframe.style.minHeight = '410px';
+				});
+			}
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+</script>
+
+<script>
+	window._W.isEUUser = false;
+	window._W.showCookieToAll = "";
+</script>
+
+<script>
+	(function(jQuery) {
+		try {
+			function forceShowCcLinks() {
+				var ccLinks = document.querySelector('.cc_links');
+				if (!ccLinks) {
+					return;
+				}
+
+				var ccLinksVisible = jQuery(ccLinks).is(':visible');
+				if (ccLinksVisible) {
+					return;
+				}
+
+
+				ccLinks.style.display = 'block';
+
+				var ccParent = ccLinks.parentElement;
+
+				var ccParentVisible = jQuery(ccParent).is(':visible');
+				if (ccParentVisible) {
+					return;
+				}
+
+				ccParent.style.display = 'block';
+
+				var ccGrandparent = ccParent.parentElement;
+				var ccGrandparentVisible = jQuery(ccGrandparent).is(':visible');
+				if (ccGrandparentVisible) {
+					return;
+				}
+				ccGrandparent.style.display = 'block';
+
+			}
+
+			function forceShowCcLinksForever() {
+				var tenSeconds = 10000;
+				forceShowCcLinks();
+				setTimeout(forceShowCcLinksForever, tenSeconds);
+			}
+
+			jQuery(document).ready(forceShowCcLinksForever);
+		}
+		catch(ex) {}
+	})(window._W && _W.jQuery);
+</script>
+
+
+	</body>
+
+<!-- Mirrored from ibrahimbaheeg.weebly.com/dot-cloud-scene-animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 02 Jul 2026 17:52:34 GMT -->
+</html>
