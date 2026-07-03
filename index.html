@@ -450,118 +450,260 @@ _W.setup_model_rpc({"rpc_namespace":"_W.CustomerAccounts.RPC","model_namespace":
             <div class="banner">
 				<div class="wsite-section-elements">
 					<div><div id="156983123148951554" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+<head><script src="gdpr/gdprscript8bd2.js?buildTime=1782335418"></script>
+    <title>Showreel Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* REQUIRED CSS FIXES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        
         .full-bleed-video {
-            position: relative; /* Changed from fixed to allow scrolling */
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 1;
+            z-index: 9999;
             background: #000;
+        }
+        
+        .video-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
             overflow: hidden;
         }
-        /* Note: Ensure .video-spacer is deleted from your CSS file entirely */
+        
+        /* Ensure video covers entire screen on desktop */
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 177.78vh; /* 16:9 ratio based on height */
+            height: 100vh;
+            min-width: 100vw;
+            min-height: 56.25vw; /* 16:9 ratio based on width */
+            z-index: -1;
+        }
+        
+        @media (max-width: 1024px) and (orientation: portrait) {
+            .full-bleed-video {
+                position: relative;
+                height: auto;
+                min-height: 0;
+            }
+            
+            .video-container {
+                position: relative;
+                top: auto;
+                left: auto;
+                transform: none;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+                overflow: visible;
+            }
+            
+            .video-container::before {
+                display: none;
+            }
+            
+            #player, .click-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                overflow-y: auto;
+            }
+        }
+
+        @media (max-width: 768px) and (orientation: portrait) {
+            .full-bleed-video {
+                position: relative;
+                height: auto;
+            }
+        }
+        
+        #player {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 177.78vh; /* 16:9 ratio based on height */
+            height: 100vh;
+            min-width: 100vw;
+            min-height: 56.25vw; /* 16:9 ratio based on width */
+            pointer-events: none;
+        }
+        
+        .click-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 177.78vh;
+            height: 100vh;
+            min-width: 100vw;
+            min-height: 56.25vw;
+            z-index: 50;
+            cursor: pointer;
+        }
+        
+        .mute-control {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        
+        .mute-btn {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 4px 10px;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: normal;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .mute-btn:hover {
+            background: rgba(255,255,255,0.9);
+            color: black;
+        }
+
+        /* SIMPLE PLAY BUTTON - HIGHEST Z-INDEX */
+        .play-button-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 200; /* Highest of all */
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        
+        .play-button-container.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid #000;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        #header, .wsite-header {
+            display: none !important;
+        }
+
+        .wsite-background {
+            background: #000 !important;
+        }
+        
+        #main, .container, .wsite-section {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: none !important;
+        }
+
+        .video-spacer {
+            height: 100vh;
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) and (orientation: portrait) {
+            .video-spacer {
+                display: none;
+            }
+            
+            #player {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                width: 100%;
+                height: 100%;
+                min-width: auto;
+                min-height: auto;
+            }
+            
+            .click-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: none;
+                width: 100%;
+                height: 100%;
+                min-width: auto;
+                min-height: auto;
+            }
+        }
     </style>
 </head>
 <body>
-
-    <!-- Video Container (Removed the spacer div) -->
     <div class="full-bleed-video">
-        <!-- Your video embed elements here -->
-        <div id="playButtonContainer"><button id="playButton">PLAY</button></div>
-        <div id="clickOverlay"></div>
-        <button id="muteBtn">MUTE</button>
+        <div class="video-container">
+            <div id="player"></div>
+            <!-- SIMPLE PLAY BUTTON - SEPARATE FROM EVERYTHING -->
+            <div class="play-button-container" id="playButtonContainer">
+                <div class="play-button" id="playButton"></div>
+            </div>
+            <div class="click-overlay" id="clickOverlay"></div>
+            <div class="mute-control">
+                <button class="mute-btn" id="muteBtn">UNMUTE</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Rest of your page content follows naturally below -->
-    <div class="content">
-        <h1>Welcome</h1>
-    </div>
+    <div class="video-spacer"></div>
 
     <script>
-        // Updated URL mapping for GitHub Pages
-        const timeRanges = [
-            { start: 0, end: 4, url: "/brouq-mixed-use-building.html" },
-            { start: 4, end: 6, url: "/office-design-challenge.html" },
-            { start: 6, end: 10, url: "/house-of-the-future.html" },
-            { start: 10, end: 14, url: "/amwaj-the-threes.html" },
-            { start: 14, end: 16, url: "/brouq-mixed-use-building.html" },
-            { start: 16, end: 20, url: "/emaar-compound.html" },
-            { start: 20, end: 22, url: "/villa-villette.html" },
-            { start: 22, end: 25, url: "/movenpick-animation.html" },
-            { start: 25, end: 27, url: "/coldwell-banker.html" },
-            { start: 27, end: 32, url: "/mountain-view-promenade.html" },
-            { start: 32, end: 38, url: "/enrico.html" },
-            { start: 38, end: 42, url: "/cranteacute.html" },
-            { start: 42, end: 43, url: "/souffle.html" },
-            { start: 43, end: 45, url: "/house-of-zizi.html" },
-            { start: 45, end: 56, url: "/newgiza-villa.html" },
-            { start: 56, end: 62, url: "/iceland-snow-ski-cabin.html" },
-            { start: 62, end: 73, url: "/the-last-nuclear-bomb-memorial.html" },
-            { start: 73, end: 75, url: "/autoneel.html" },
-            { start: 75, end: 77, url: "/sfff.html" },
-            { start: 77, end: 80, url: "/locally-d5.html" },
-            { start: 80, end: 87, url: "/carv-teaser-animation.html" },
-            { start: 87, end: 91, url: "/zo-showreel-animation.html" }
-        ];
-
-        let player;
-        let isMuted = true;
-
-        function applyCorrectSizing() {
-            const container = document.querySelector('.full-bleed-video');
-            if (container) {
-                container.style.position = 'relative'; // Ensures it flows with the page
-            }
-        }
-
-        function unmuteVideo() {
-            if (player && isMuted) {
-                player.unMute();
-                isMuted = false;
-                document.getElementById('muteBtn').textContent = 'MUTE';
-            }
-        }
-
-        function muteVideo() {
-            if (player && !isMuted) {
-                player.mute();
-                isMuted = true;
-                document.getElementById('muteBtn').textContent = 'UNMUTE';
-            }
-        }
-
-        // Load YouTube API
-        const tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const playButton = document.getElementById('playButton');
-            const playContainer = document.getElementById('playButtonContainer');
-            const clickOverlay = document.getElementById('clickOverlay');
-            const muteBtn = document.getElementById('muteBtn');
-
-            if (playButton) playButton.addEventListener('click', (e) => { e.stopPropagation(); manualPlayVideo(); });
-            if (playContainer) playContainer.addEventListener('click', (e) => { e.stopPropagation(); manualPlayVideo(); });
-            if (clickOverlay) clickOverlay.addEventListener('click', handleVideoClick);
-            if (muteBtn) muteBtn.addEventListener('click', () => isMuted ? unmuteVideo() : muteVideo());
-            
-            const header = document.getElementById('header') || document.querySelector('.wsite-header');
-            if (header) header.style.display = 'none';
-            
-            applyCorrectSizing();
-        });
-
-        window.addEventListener('resize', applyCorrectSizing);
-    </script>
-</body>
-</html>
         // YouTube API
         let player;
         let isMuted = true;
