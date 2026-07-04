@@ -1139,7 +1139,7 @@ This design studio invites students to explore spirituality as an experiential a
 <div><div style="height:20px;overflow:hidden"></div>
 <style>
 .custom-gallery { max-width: 100%; margin: 0 auto; }
-.custom-gallery .gallery-main { position: relative; width: 100%; aspect-ratio: 3/4; background:#f2f2f2; overflow:hidden; border-radius:4px; }
+.custom-gallery .gallery-main { position: relative; width: 100%; background:#f2f2f2; overflow:hidden; border-radius:4px; }
 .custom-gallery .gallery-main img { width:100%; height:100%; object-fit: contain; display:block; }
 .custom-gallery .gallery-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); color:#fff; border:none; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:16px; z-index:5; line-height:1; }
 .custom-gallery .gallery-arrow.prev { left:8px; }
@@ -1166,6 +1166,15 @@ function renderCustomGallery(containerId, images) {
 
   var mainImg = container.querySelector('.gallery-main-img');
   var thumbsWrap = container.querySelector('.gallery-thumbs');
+
+  var mainFrame = container.querySelector('.gallery-main');
+  function fitFrame() {
+    if (mainImg.naturalWidth && mainImg.naturalHeight) {
+      mainFrame.style.aspectRatio = mainImg.naturalWidth + ' / ' + mainImg.naturalHeight;
+    }
+  }
+  mainImg.addEventListener('load', fitFrame);
+  if (mainImg.complete) fitFrame();
 
   images.forEach(function(src, i) {
     var t = document.createElement('img');
