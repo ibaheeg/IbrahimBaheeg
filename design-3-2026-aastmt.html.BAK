@@ -1137,81 +1137,10 @@ This design studio invites students to explore spirituality as an experiential a
 						
 
 <div><div style="height:20px;overflow:hidden"></div>
-<style>
-.custom-gallery { max-width: 100%; margin: 0 auto; }
-.custom-gallery .gallery-main { position: relative; width: 100%; aspect-ratio: 3/4; background:#f2f2f2; overflow:hidden; border-radius:4px; }
-.custom-gallery .gallery-main img { width:100%; height:100%; object-fit: contain; display:block; }
-.custom-gallery .gallery-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); color:#fff; border:none; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:16px; z-index:5; line-height:1; }
-.custom-gallery .gallery-arrow.prev { left:8px; }
-.custom-gallery .gallery-arrow.next { right:8px; }
-.custom-gallery .gallery-thumbs { display:flex; gap:6px; overflow-x:auto; margin-top:8px; padding-bottom:4px; }
-.custom-gallery .gallery-thumbs img { width:56px; height:56px; object-fit:cover; cursor:pointer; opacity:0.5; border:2px solid transparent; border-radius:3px; flex-shrink:0; }
-.custom-gallery .gallery-thumbs img.active { opacity:1; border-color:#333; }
-</style>
-<script>
-function renderCustomGallery(containerId, images) {
-  var container = document.getElementById(containerId);
-  if (!container || !images || !images.length) return;
-  var current = 0;
-
-  container.innerHTML =
-    '<div class="custom-gallery">' +
-      '<div class="gallery-main">' +
-        '<button class="gallery-arrow prev" type="button" aria-label="Previous">&#10094;</button>' +
-        '<img class="gallery-main-img" src="' + images[0] + '">' +
-        '<button class="gallery-arrow next" type="button" aria-label="Next">&#10095;</button>' +
-      '</div>' +
-      '<div class="gallery-thumbs"></div>' +
-    '</div>';
-
-  var mainImg = container.querySelector('.gallery-main-img');
-  var thumbsWrap = container.querySelector('.gallery-thumbs');
-
-  images.forEach(function(src, i) {
-    var t = document.createElement('img');
-    t.src = src;
-    if (i === 0) t.classList.add('active');
-    t.addEventListener('click', function() { showImage(i); });
-    thumbsWrap.appendChild(t);
-  });
-
-  function showImage(i) {
-    current = (i + images.length) % images.length;
-    mainImg.src = images[current];
-    var thumbs = thumbsWrap.querySelectorAll('img');
-    for (var idx = 0; idx < thumbs.length; idx++) {
-      thumbs[idx].classList.toggle('active', idx === current);
-    }
-  }
-
-  container.querySelector('.gallery-arrow.prev').addEventListener('click', function() { showImage(current - 1); });
-  container.querySelector('.gallery-arrow.next').addEventListener('click', function() { showImage(current + 1); });
-}
-</script>
 <div id='667383670754112835-slideshow'></div>
 <script type='text/javascript'>
 (function(jQuery) {
-function init() { renderCustomGallery("667383670754112835-slideshow", [
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0001.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0002.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0003.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0004.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0005.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0006.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0007.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0008.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0009.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0010.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0011.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0012.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0013.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0014.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0015.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0016.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0017.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0018.jpg",
-      "uploads/1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0019.jpg"
-    ]); }
+function init() { window.wSlideshow && window.wSlideshow.render({elementID:"667383670754112835",nav:"thumbnails",navLocation:"bottom",captionLocation:"bottom",transition:"fade",autoplay:"0",speed:"5",aspectRatio:"auto",showControls:"true",randomStart:"false",images:[{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0001.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0002.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0003.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0004.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0005.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0006.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0007.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0008.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0009.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0010.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0011.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0012.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0013.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0014.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0015.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0016.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0017.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0018.jpg","width":"800","height":"566"},{"url":"1/3/3/3/133351565/white-and-black-paper-textured-simple-professional-sunday-service-presentation-2-page-0019.jpg","width":"800","height":"566"}]}) }
 jQuery(document).ready(init);
 })(window.jQuery)
 </script>
@@ -1228,21 +1157,7 @@ jQuery(document).ready(init);
 <div id='415223283322548727-slideshow'></div>
 <script type='text/javascript'>
 (function(jQuery) {
-    function init() { renderCustomGallery("415223283322548727-slideshow", [
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0001.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0002_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0003_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0004_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0005_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0006_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0007_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0008_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0009_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0010_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0011_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0012_orig.jpg",
-      "uploads/1/3/3/3/133351565/movie-anayisis-3-page-0013_orig.jpg"
-    ]); }
+    function init() { window.wSlideshow && window.wSlideshow.render({ elementID: "415223283322548727", nav: "thumbnails", navLocation: "bottom", captionLocation: "bottom", transition: "fade", autoplay: "0", speed: "5", aspectRatio: "auto", showControls: "true", randomStart: "false", images: [{ "url": "1/3/3/3/133351565/movie-anayisis-3-page-0001.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0002_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0003_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0004_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0005_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0006_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0007_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0008_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0009_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0010_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0011_orig.jpg", "width": "800", "height": "566" }, { "url": "1/3/3/3/133351565/movie-anayisis-3-page-0012_orig.jpg", "width": "800", "height": "566" }, { "url":"1/3/3/3/133351565/movie-anayisis-3-page-0013_orig.jpg","width":"800","height":"566"}]}) }
 jQuery(document).ready(init);
 })(window.jQuery)
 </script>
