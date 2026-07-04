@@ -1356,77 +1356,11 @@ a.wsite-menu-subitem[style] {
 					
 						
 
-<style>
-.custom-gallery { max-width: 100%; margin: 0 auto; }
-.custom-gallery .gallery-main { position: relative; width: 100%; aspect-ratio: 3/4; background:#f2f2f2; overflow:hidden; border-radius:4px; }
-.custom-gallery .gallery-main img { width:100%; height:100%; object-fit: contain; display:block; }
-.custom-gallery .gallery-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); color:#fff; border:none; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:16px; z-index:5; line-height:1; }
-.custom-gallery .gallery-arrow.prev { left:8px; }
-.custom-gallery .gallery-arrow.next { right:8px; }
-.custom-gallery .gallery-thumbs { display:flex; gap:6px; overflow-x:auto; margin-top:8px; padding-bottom:4px; }
-.custom-gallery .gallery-thumbs img { width:56px; height:56px; object-fit:cover; cursor:pointer; opacity:0.5; border:2px solid transparent; border-radius:3px; flex-shrink:0; }
-.custom-gallery .gallery-thumbs img.active { opacity:1; border-color:#333; }
-</style>
-<script>
-function renderCustomGallery(containerId, images) {
-  var container = document.getElementById(containerId);
-  if (!container || !images || !images.length) return;
-  var current = 0;
-
-  container.innerHTML =
-    '<div class="custom-gallery">' +
-      '<div class="gallery-main">' +
-        '<button class="gallery-arrow prev" type="button" aria-label="Previous">&#10094;</button>' +
-        '<img class="gallery-main-img" src="' + images[0] + '">' +
-        '<button class="gallery-arrow next" type="button" aria-label="Next">&#10095;</button>' +
-      '</div>' +
-      '<div class="gallery-thumbs"></div>' +
-    '</div>';
-
-  var mainImg = container.querySelector('.gallery-main-img');
-  var thumbsWrap = container.querySelector('.gallery-thumbs');
-
-  images.forEach(function(src, i) {
-    var t = document.createElement('img');
-    t.src = src;
-    if (i === 0) t.classList.add('active');
-    t.addEventListener('click', function() { showImage(i); });
-    thumbsWrap.appendChild(t);
-  });
-
-  function showImage(i) {
-    current = (i + images.length) % images.length;
-    mainImg.src = images[current];
-    var thumbs = thumbsWrap.querySelectorAll('img');
-    for (var idx = 0; idx < thumbs.length; idx++) {
-      thumbs[idx].classList.toggle('active', idx === current);
-    }
-  }
-
-  container.querySelector('.gallery-arrow.prev').addEventListener('click', function() { showImage(current - 1); });
-  container.querySelector('.gallery-arrow.next').addEventListener('click', function() { showImage(current + 1); });
-}
-</script>
 <div><div style="height:20px;overflow:hidden"></div>
 <div id='530920459610025541-slideshow'></div>
 <script type='text/javascript'>
 (function(jQuery) {
-function init() { renderCustomGallery("530920459610025541-slideshow", [
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-1_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-2_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-3_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-4_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-5_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-6_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-7_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-8_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-9_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-10_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-11_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-12_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-13_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-2-user-research-2025-rh-14_1_orig.jpg"
-    ]); }
+function init() { window.wSlideshow && window.wSlideshow.render({elementID:"530920459610025541",nav:"thumbnails",navLocation:"bottom",captionLocation:"bottom",transition:"fade",autoplay:"0",speed:"5",aspectRatio:"auto",showControls:"true",randomStart:"false",images:[{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-1_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-2_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-3_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-4_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-5_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-6_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-7_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-8_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-9_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-10_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-11_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-12_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-13_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618},{"url":"1/3/3/3/133351565/d4-group-2-user-research-2025-rh-14_1.jpg","width":618,"height":800,"fullHeight":800,"fullWidth":618}]}) }
 jQuery(document).ready(init);
 })(window.jQuery)
 </script>
@@ -1443,51 +1377,7 @@ jQuery(document).ready(init);
 <div id='164776458916969021-slideshow'></div>
 <script type='text/javascript'>
 (function(jQuery) {
-function init() { renderCustomGallery("164776458916969021-slideshow", [
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-1_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-2_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-3_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-4_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-5_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-6_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-7_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-8_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-9_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-10_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-11_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-12_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-13_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-14_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-15_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-16_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-17_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-18_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-19_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-20_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-21_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-22_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-23_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-24_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-25_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-26_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-27_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-28_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-29_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-30_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-31_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-32_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-33_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-34_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-35_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-36_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-37_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-38_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-39_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-40_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-41_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-42_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-3-user-research-2025-43_1_orig.jpg"
-    ]); }
+function init() { window.wSlideshow && window.wSlideshow.render({elementID:"164776458916969021",nav:"thumbnails",navLocation:"bottom",captionLocation:"bottom",transition:"fade",autoplay:"0",speed:"5",aspectRatio:"auto",showControls:"true",randomStart:"false",images:[{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-1_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-2_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-3_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-4_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-5_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-6_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-7_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-8_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-9_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-10_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-11_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-12_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-13_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-14_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-15_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-16_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-17_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-18_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-19_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-20_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-21_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-22_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-23_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-24_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-25_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-26_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-27_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-28_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-29_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-30_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-31_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-32_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-33_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-34_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-35_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-36_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-37_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-38_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-39_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-40_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-41_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-42_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100},{"url":"1/3/3/3/133351565/d4-group-3-user-research-2025-43_1.jpg","width":800,"height":566,"fullHeight":778,"fullWidth":1100}]}) }
 jQuery(document).ready(init);
 })(window.jQuery)
 </script>
@@ -1504,35 +1394,7 @@ jQuery(document).ready(init);
 <div id='796715940723522850-slideshow'></div>
 <script type='text/javascript'>
 (function(jQuery) {
-function init() { renderCustomGallery("796715940723522850-slideshow", [
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-1_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-2_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-3_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-4_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-5_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-6_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-7_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-8_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-9_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-10_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-11_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-12_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-13_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-14_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-15_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-16_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-17_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-18_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-19_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-20_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-21_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-22_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-23_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-24_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-25_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-26_1_orig.jpg",
-      "uploads/1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-27_1_orig.jpg"
-    ]); }
+function init() { window.wSlideshow && window.wSlideshow.render({elementID:"796715940723522850",nav:"thumbnails",navLocation:"bottom",captionLocation:"bottom",transition:"fade",autoplay:"0",speed:"5",aspectRatio:"auto",showControls:"true",randomStart:"false",images:[{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-1_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-2_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-3_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-4_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-5_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-6_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-7_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-8_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-9_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-10_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-11_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-12_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-13_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-14_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-15_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-16_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-17_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-18_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-19_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-20_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-21_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-22_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-23_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-24_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-25_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-26_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566},{"url":"1/3/3/3/133351565/d4-group-1-user-research-2025-1rhw-27_1_orig.jpg","width":566,"height":800,"fullHeight":800,"fullWidth":566}]}) }
 jQuery(document).ready(init);
 })(window.jQuery)
 </script>
