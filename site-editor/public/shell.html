@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Site Editor</title>
+<style>
+  html, body { margin: 0; height: 100%; font-family: -apple-system, Segoe UI, Arial, sans-serif; }
+  #app { display: flex; height: 100%; }
+  #sidebar { width: 280px; flex: none; background: #1c1c1c; color: #eee; overflow-y: auto; }
+  #sidebar h1 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: #999; padding: 14px 16px 6px; margin: 0; }
+  .pg { padding: 8px 16px; font-size: 13px; cursor: pointer; border-left: 3px solid transparent; word-break: break-all; }
+  .pg:hover { background: #2a2a2a; }
+  .pg.active { background: #2f3a2f; border-left-color: #7cbf6a; color: #fff; }
+  #main { flex: 1; display: flex; flex-direction: column; }
+  #bar { padding: 8px 12px; background: #f4f4f4; border-bottom: 1px solid #ddd; font-size: 12px; color: #555; }
+  iframe { flex: 1; border: none; width: 100%; }
+</style>
+  <link rel="canonical" href="https://ibaheeg.github.io/site-editor/public/shell.html" />
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <h1>Pages</h1>
+    {{PAGES}}
+  </div>
+  <div id="main">
+    <div id="bar">Click a page on the left. Edit text/images directly in the preview, then hit Save (bottom-right of the preview).</div>
+    <iframe id="preview"></iframe>
+  </div>
+</div>
+<script>
+  const items = document.querySelectorAll('.pg');
+  const iframe = document.getElementById('preview');
+  items.forEach(el => {
+    el.addEventListener('click', () => {
+      items.forEach(x => x.classList.remove('active'));
+      el.classList.add('active');
+      const href = el.getAttribute('data-href');
+      iframe.src = href + (href.includes('?') ? '&' : '?') + '__edit=1';
+    });
+  });
+  if (items[0]) items[0].click();
+</script>
+</body>
+</html>
